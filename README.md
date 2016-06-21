@@ -55,10 +55,6 @@ Skipping a test:
 chmod -x ./test/skip_this_one.sh
 ```
 
-## Setup
-
-Edit `setup.sh`
-
 ## API
 
 The following are provided as bash functions:
