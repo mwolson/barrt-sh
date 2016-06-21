@@ -1,5 +1,40 @@
 # barrt - A Bash Rspec-like Regression Test Framework
 
+## Installation
+
+Install the module from npm:
+
+```sh
+npm i --save barrt
+```
+
+Install any plugins you may want, such as [barrt-curl](https://github.com/mwolson/barrt-curl).
+
+Edit the `setup.sh` file in your test suite to include the following:
+
+```sh
+#!/bin/bash
+
+modules=$(dirname "$BASH_SOURCE")/node_modules
+
+. "$modules"/barrt/setup.sh
+. "$modules"/barrt-curl/setup.sh
+
+# other plugins or setup tasks...
+```
+
+Create a `runner.sh` file in your test suite with these contents:
+
+```sh
+#!/bin/bash
+
+modules=$(dirname "$BASH_SOURCE")/node_modules
+
+exec "$modules"/barrt/runner.sh
+```
+
+Write some tests and place them in the `test/` directory.
+
 ## Run tests
 
 Run all tests:
