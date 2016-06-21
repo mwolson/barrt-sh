@@ -1,10 +1,9 @@
 #!/bin/bash
 
-grep_cmd="grep -E"
-if test "$(echo n | sed -r 's/(Y|N)/y/i' 2>/dev/null)" = "y"; then
-    sed_cmd="sed -r"
-else
-    sed_cmd="perl -pe"
+grep_cmd="$(which grep) -E"; if test $? -ne 0; then echo "Error: grep not found"; exit 1; fi
+sed_cmd="$(which sed) -r"; if test $? -ne 0; then echo "Error: sed not found"; exit 1; fi
+if test "$(echo n | $sed_cmd 's/(Y|N)/y/i' 2>/dev/null)" != "y"; then
+    sed_cmd="$(which perl) -pe"; if test $? -ne 0; then echo "Error: perl not found"; exit 1; fi
 fi
 
 function grep() {
@@ -154,7 +153,7 @@ function to_contain() {
 }
 
 function to_match() {
-    if ! <<< "$side_a" $grep -i "$1" > /dev/null; then
+    if ! <<< "$side_a" grep -i "$1" > /dev/null; then
         fail "Expected $side_a_text to match \"$1\" but it did not"
     fi
 }
