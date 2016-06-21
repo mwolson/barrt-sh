@@ -5,11 +5,11 @@ fail_cnt=0
 skip_cnt=0
 fail_list=""
 
-for test_case in test/*; do
-    if test ! -x "$test_case"; then
+for scenario in test/*; do
+    if test ! -x "$scenario"; then
         (( skip_cnt++ ))
-        echo "> Skipping $test_case since it is not executable"
-    elif "$test_case"; then
+        echo "> Skipping $scenario since it is not executable"
+    elif "$scenario"; then
         (( pass_cnt++ ))
     else
         (( fail_cnt++ ))
@@ -18,9 +18,9 @@ for test_case in test/*; do
 done
 
 echo -e "\nTest Summary:"
-echo -e "  - ${pass_cnt} test case(s) passed"
-echo -e "  - ${skip_cnt} test case(s) skipped"
-echo -e "  - ${fail_cnt} test case(s) failed"
+echo -e "  - ${pass_cnt} scenario(s) passed"
+echo -e "  - ${skip_cnt} scenario(s) skipped"
+echo -e "  - ${fail_cnt} scenario(s) failed"
 
 if test "$fail_cnt" -gt 0; then
     echo -e -n '\nFailures:'
