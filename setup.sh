@@ -57,6 +57,10 @@ function echo_quoted() {
     done
 }
 
+function first_line() {
+    head -n 1 | tr -d '\r\n'
+}
+
 function describe() {
     echo "* $@"
 }

@@ -34,6 +34,8 @@ The following are provided as bash functions:
 
 `echo_quoted $arguments_to_quote`
 
+`first_line`
+
 `define_side_a $value_to_be_compared`
 
 `define_side_a_text $description_of_value_to_be_compared`
