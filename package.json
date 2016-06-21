@@ -1,0 +1,21 @@
+{
+  "name": "barrt",
+  "version": "1.0.0",
+  "description": "A Bash Rspec-like Regression Test Framework",
+  "main": "setup.sh",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mwolson/barrt-sh.git"
+  },
+  "author": "Michael Olson <mwolson@member.fsf.org>",
+  "license": "MIT",
+  "keywords": [
+    "bash",
+    "shell",
+    "test",
+    "rspec"
+  ],
+  "dependencies": {},
+  "devDependencies": {}
+}
