@@ -34,6 +34,14 @@ The following are provided as bash functions:
 
 `echo_quoted $arguments_to_quote`
 
+`define_side_a $value_to_be_compared`
+
+`define_side_a_text $description_of_value_to_be_compared`
+
+`define_addl_text $additional_explanation_if_test_case_fails`
+
+`get_side_a`, `get_side_a_text`, `get_addl_text`
+
 `describe $scenario_description`
 
 `it $test_case_description`

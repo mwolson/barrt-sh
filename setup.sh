@@ -21,6 +21,30 @@ function _reset_assertion_state() {
     side_a_text=
 }
 
+function define_side_a() {
+    side_a=$1
+}
+
+function define_side_a_text() {
+    side_a_text=$1
+}
+
+function define_addl_text() {
+    addl_text=$1
+}
+
+function get_side_a() {
+    echo -n "$side_a"
+}
+
+function get_side_a_text() {
+    echo -n "$side_a_text"
+}
+
+function get_addl_text() {
+    echo -n "$addl_text"
+}
+
 _reset_assertion_state
 
 function echo_quoted() {
@@ -55,8 +79,8 @@ function fail() {
 }
 
 function expect() {
-    side_a=$1
-    side_a_text="\"$side_a\""
+    define_side_a "$1"
+    define_side_a_text "\"$side_a\""
 }
 
 function to_be_empty() {
