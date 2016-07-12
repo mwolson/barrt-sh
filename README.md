@@ -59,39 +59,21 @@ chmod -x ./test/skip_this_one.sh
 
 The following are provided as bash functions:
 
-`grep $grep_arguments`
-
-`sed $sed_arguments`
-
-`echo_quoted $arguments_to_quote`
-
-`first_line`
-
-`define_side_a $value_to_be_compared`
-
-`define_side_a_text $description_of_value_to_be_compared`
-
-`define_addl_text $additional_explanation_if_test_case_fails`
-
-`get_side_a`, `get_side_a_text`, `get_addl_text`
+### Core
 
 `describe $scenario_description`
 
 `it $test_case_description`
 
-`soft_fail $failure_reason`
-
-`fail $failure_reason`
-
 `expect $value_to_be_compared`
+
+### Assertions
 
 `to_be_empty`
 
 `to_not_be_empty`
 
 `to_equal $another_value`
-
-`is_numeric $possible_number`
 
 `to_be_numeric`
 
@@ -104,6 +86,34 @@ The following are provided as bash functions:
 `to_contain $substring`
 
 `to_match $pattern`
+
+### Compatibility
+
+`grep $grep_arguments`
+
+`sed $sed_arguments`
+
+### Utility
+
+`echo_quoted $arguments_to_quote`
+
+`first_line`
+
+`fail $failure_reason`
+
+`soft_fail $failure_reason`
+
+`is_numeric $possible_number`
+
+### Defining new assertions
+
+`define_side_a $value_to_be_compared`
+
+`define_side_a_text $description_of_value_to_be_compared`
+
+`define_addl_text $additional_explanation_if_test_case_fails`
+
+`get_side_a`, `get_side_a_text`, `get_addl_text`
 
 ## License
 
