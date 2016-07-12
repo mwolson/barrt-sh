@@ -75,7 +75,7 @@ $ ./runner.sh
   - it is a number less than 7
 
 Test Summary:
-  - 1 scenario(s) passed
+  - 2 scenario(s) passed
   - 0 scenario(s) skipped
   - 0 scenario(s) failed
 ```
