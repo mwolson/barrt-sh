@@ -4,7 +4,7 @@
 
 `barrt` was written to allow easy testing of commandline programs. The initial use case was making it possible to
 choose "Copy as cURL" from a request in Google Chrome, drop the result into a test case, edit the URL slightly, and
-begin checking headers and response body parts in the output. cURL support is available as a plugin in the
+begin checking the headers and response body. cURL support is available as a plugin in the
 [barrt-curl](https://github.com/mwolson/barrt-curl) module.
 
 One of the design goals is to provide helpful error messages when tests fail. The framework may be extended with
@@ -47,7 +47,13 @@ expect $num; to_be_numeric; to_be_less_than 7
 
 ### Test case using the barrt-curl module
 
+In a new file called `test/example-request.sh` (make sure to run `chmod +x` on it):
+
 ```sh
+#!/bin/bash
+
+. $(dirname $0)/../setup.sh
+
 describe "Requests to example.com"
 
 record_curl http://example.com
@@ -62,6 +68,8 @@ expect_header Content-Type; to_equal text/html
 
 ```sh
 $ ./runner.sh
+* Requests to example.com
+  - it returns a 200 response with type text/html
 * The number 5
   - it is greater than 0
   - it is a number less than 7
