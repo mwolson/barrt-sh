@@ -1,5 +1,77 @@
 # barrt - A Bash Rspec-like Regression Test Framework
 
+## Usage
+
+`barrt` was written to allow easy testing of commandline programs. The initial use case was making it possible to
+choose "Copy as cURL" from a request in Google Chrome, drop the result into a test case, edit the URL slightly, and
+begin checking headers and response body parts in the output. cURL support is available as a plugin in the
+[barrt-curl](https://github.com/mwolson/barrt-curl) module.
+
+One of the design goals is to provide helpful error messages when tests fail. The framework may be extended with
+modules that create custom "expectations" (which are functions like `expect` that describe the left side of a
+comparison) that make sense when coupled with existing assertions like `to_equal`.
+
+`barrt` and `barrt-curl` are available as NPM modules. They don't use any Javascript. But having support for versioning
+and ease of installing releases is helpful even so.
+
+An effort has been made to provide compatible versions of `grep` and `sed` as functions that support extended (Perl or
+PCRE-like) regular expression syntax which work on both Linux and OS X.
+
+## Examples
+
+### Simple test case
+
+In a new file called `test/number-five.sh` (make sure to run `chmod +x` on it):
+
+```sh
+#!/bin/bash
+
+. $(dirname $0)/../setup.sh
+
+describe "The number 5"
+
+num=5
+
+it "is greater than 0"
+
+expect $num; to_be_greater_than 0
+```
+
+### Test case with chained assertions
+
+```sh
+it "is a number less than 7"
+
+expect $num; to_be_numeric; to_be_less_than 7
+```
+
+### Test case using the barrt-curl module
+
+```sh
+describe "Requests to example.com"
+
+record_curl http://example.com
+
+it "returns a 200 response with type text/html"
+
+expect_response_code; to_equal 200
+expect_header Content-Type; to_equal text/html
+```
+
+### Output
+
+```sh
+$ ./runner.sh
+* The number 5
+  - it is greater than 0
+  - it is a number less than 7
+
+Test Summary:
+  - 1 scenario(s) passed
+  - 0 scenario(s) skipped
+  - 0 scenario(s) failed
+```
+
 ## Installation
 
 Install the module from npm:
@@ -64,6 +136,8 @@ The following are provided as bash functions:
 `describe $scenario_description`
 
 `it $test_case_description`
+
+### Expectations
 
 `expect $value_to_be_compared`
 
