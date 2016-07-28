@@ -51,6 +51,8 @@ function echo_quoted() {
     for i in "$@"; do
         if [[ $i =~ $needs_quote ]]; then
             i=\'$i\'
+        elif test -z "$i"; then
+            i=\'\'
         fi
         echo -n " $i"
     done
