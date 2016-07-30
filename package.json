@@ -1,6 +1,6 @@
 {
   "name": "barrt",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "A Bash Rspec-like Regression Test Framework",
   "main": "setup.sh",
   "scripts": {},
