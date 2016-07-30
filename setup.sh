@@ -62,6 +62,10 @@ function first_line() {
     head -n 1 | tr -d '\r\n'
 }
 
+function remove_last_line() {
+    sed '$ d'
+}
+
 function describe() {
     echo "* $@"
 }

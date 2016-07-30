@@ -181,6 +181,8 @@ The following are provided as bash functions:
 
 `first_line`
 
+`remove_last_line`
+
 `fail $failure_reason`
 
 `soft_fail $failure_reason`
