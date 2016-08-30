@@ -185,6 +185,8 @@ The following are provided as bash functions:
 
 `remove_last_line`
 
+`count_lines`
+
 `fail $failure_reason`
 
 `soft_fail $failure_reason`

@@ -80,6 +80,10 @@ function remove_last_line() {
     sed '$ d'
 }
 
+function count_lines() {
+    wc -l | awk '{ print $1 }'
+}
+
 function describe() {
     echo "* $@"
 }
