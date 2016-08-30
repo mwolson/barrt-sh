@@ -177,7 +177,9 @@ The following are provided as bash functions:
 
 ### Utility
 
-`echo_quoted $arguments_to_quote`
+`echo_quoted $arguments_to_quote...`
+
+`print_json_array $arguments_of_array...`
 
 `first_line`
 
@@ -186,6 +188,8 @@ The following are provided as bash functions:
 `fail $failure_reason`
 
 `soft_fail $failure_reason`
+
+`is_between $num $start_range $end_range`
 
 `is_numeric $possible_number`
 
