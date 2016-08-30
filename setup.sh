@@ -190,3 +190,10 @@ function to_match() {
     fi
 }
 
+function to_be_consistent() {
+    local first=$(get_side_a | first_line)
+    local uniques=$(get_side_a | sort -u)
+    if test "$first" != "$uniques"; then
+        fail "Expected $side_a_text to be consistent but it was not"
+    fi
+}

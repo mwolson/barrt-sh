@@ -169,6 +169,8 @@ The following are provided as bash functions:
 
 `to_match $pattern`
 
+`to_be_consistent`
+
 ### Compatibility
 
 `grep $grep_arguments`
