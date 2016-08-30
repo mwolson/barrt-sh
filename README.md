@@ -4,18 +4,22 @@
 
 `barrt` was written to allow easy testing of commandline programs. The initial use case was making it possible to
 choose "Copy as cURL" from a request in Google Chrome, drop the result into a test case, edit the URL slightly, and
-begin checking the headers and response body. cURL support is available as a plugin in the
-[barrt-curl](https://github.com/mwolson/barrt-curl) module.
+begin checking the headers and response body.
 
 One of the design goals is to provide helpful error messages when tests fail. The framework may be extended with
 modules that create custom "expectations" (which are functions like `expect` that describe the left side of a
 comparison) that make sense when coupled with existing assertions like `to_equal`.
 
-`barrt` and `barrt-curl` are available as NPM modules. They don't use any Javascript. But having support for versioning
+`barrt` and its plugins are available as NPM modules. They don't use any Javascript. But having support for versioning
 and ease of installing releases is helpful even so.
 
 An effort has been made to provide compatible versions of `grep` and `sed` as functions that support extended (Perl or
 PCRE-like) regular expression syntax which work on both Linux and OS X.
+
+## Plugins
+
+* [barrt-curl](https://github.com/mwolson/barrt-curl)
+* [barrt-nginx](https://github.com/mwolson/barrt-nginx)
 
 ## Examples
 
@@ -88,7 +92,7 @@ Install the module from npm:
 npm i --save barrt
 ```
 
-Install any plugins you may want, such as [barrt-curl](https://github.com/mwolson/barrt-curl).
+Install any plugins you may want.
 
 Edit the `setup.sh` file in your test suite to include the following:
 
