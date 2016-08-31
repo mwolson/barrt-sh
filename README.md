@@ -20,6 +20,7 @@ PCRE-like) regular expression syntax which work on both Linux and OS X.
 
 * [barrt-curl](https://github.com/mwolson/barrt-curl)
 * [barrt-nginx](https://github.com/mwolson/barrt-nginx)
+* [barrt-wrk](https://github.com/mwolson/barrt-wrk)
 
 ## Examples
 
