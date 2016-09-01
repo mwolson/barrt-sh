@@ -166,7 +166,11 @@ The following are provided as bash functions:
 
 `to_be_greater_than $another_number`
 
+`to_be_greater_than_or_equal_to $another_number`
+
 `to_be_less_than $another_number`
+
+`to_be_less_than_or_equal_to $another_number`
 
 `to_be_between $range_1 $range_2`
 

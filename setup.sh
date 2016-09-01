@@ -160,12 +160,30 @@ function to_be_greater_than() {
     fi
 }
 
+function to_be_greater_than_or_equal_to() {
+    to_be_numeric
+    if ! is_numeric "$1"; then
+        fail "Expected 1st argument \"$1\" to be a numeric value but it was not"
+    elif test "$side_a" -lt "$1"; then
+        fail "Expected $side_a_text to be greater than or equal to $1 but it was not"
+    fi
+}
+
 function to_be_less_than() {
     to_be_numeric
     if ! is_numeric "$1"; then
         fail "Expected 1st argument \"$1\" to be a numeric value but it was not"
     elif test "$side_a" -ge "$1"; then
         fail "Expected $side_a_text to be less than $1 but it was not"
+    fi
+}
+
+function to_be_less_than_or_equal_to() {
+    to_be_numeric
+    if ! is_numeric "$1"; then
+        fail "Expected 1st argument \"$1\" to be a numeric value but it was not"
+    elif test "$side_a" -gt "$1"; then
+        fail "Expected $side_a_text to be less than or equal to $1 but it was not"
     fi
 }
 
