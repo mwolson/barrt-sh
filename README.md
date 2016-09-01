@@ -186,6 +186,8 @@ The following are provided as bash functions:
 
 `echo_quoted $arguments_to_quote...`
 
+`in_n_seconds $seconds $commands_to_run...`
+
 `print_json_array $arguments_of_array...`
 
 `first_line`

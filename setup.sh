@@ -58,6 +58,12 @@ function echo_quoted() {
     done
 }
 
+function in_n_seconds() {
+    local sec=$1
+    shift
+    { sleep "$sec"; "$@"; } &
+}
+
 function print_json_array() {
     local first=y
     echo "["
