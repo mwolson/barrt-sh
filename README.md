@@ -192,6 +192,8 @@ The following are provided as bash functions:
 
 `first_line`
 
+`last_line`
+
 `remove_last_line`
 
 `count_lines`
